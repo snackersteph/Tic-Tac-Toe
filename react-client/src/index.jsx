@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
 
-import Practice from './components/Practice.jsx';
-import PhraseList from './components/PhraseList.jsx';
+import Board from './components/Board.jsx';
+import Square from './components/Square.jsx';
 
-class App extends React.Component {
+class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,9 +13,17 @@ class App extends React.Component {
 
   render() {
     return (
-
-    )
+      <div className="game">
+        <div className="game-board">
+          <Board
+          />
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+        </div>
+      </div>
+    );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Game />, document.getElementById('game'));
